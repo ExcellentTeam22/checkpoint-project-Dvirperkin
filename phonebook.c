@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 struct contact{
 	char fname[31];
@@ -167,14 +168,14 @@ void delet(void)
 		printf("\n\nAre you sure you want to delete this contact?(y/n)");
 		ch = getc(stdin);
 		getc(stdin);
-		if(ch == 'y'){
-	   	for(j = i ; j <= last ; j++)
-			A[j] = A[j+1];
+		if(ch == 'y') {
+            for (j = i; j <= last; j++)
+                A[j] = A[j + 1];
 
-	   	last--;
-	   	find = 1;
-  	 	break;
-		}
+            last--;
+            find = 1;
+            break;
+        }
 	 }
 	}
     // My code
@@ -253,34 +254,36 @@ void search(void)
 {
 	char ch;
 	clrscr();
-    printf("\nPhone Book12<::>$earch Contacts");
-    printf("\n--------------------------------------------------------------------------------");
-	printf("\nChoose search type,please:\n\n");
-	printf("\t[1] |--> Search by first name\n");
-	printf("\t[2] |--> Search by last name\n");
-	printf("\t[3] |--> Search by phone number\n");
-	printf("\t[4] |--> Search by cellphone number\n");
-	printf("\t[5] |--> Main Menu\n");
-	printf("\n\t::Enter a number (1-5): ");
-	ch = getc(stdin);
-	getc(stdin);
-	printf("\n--------------------------------------------------------------------------------");
-    switch(ch) {
-		case '1':
-		searchf();
-	    break;
-		case '2':
-		searchl();
-		break;
-		case '3':
-		searchp();
-		break;
-		case '4':
-		searchc();
-		break;
-		case '5':
-		default:
-			return;
+    while(true) {
+        printf("\nPhone Book12<::>$earch Contacts");
+        printf("\n--------------------------------------------------------------------------------");
+        printf("\nChoose search type,please:\n\n");
+        printf("\t[1] |--> Search by first name\n");
+        printf("\t[2] |--> Search by last name\n");
+        printf("\t[3] |--> Search by phone number\n");
+        printf("\t[4] |--> Search by cellphone number\n");
+        printf("\t[5] |--> Main Menu\n");
+        printf("\n\t::Enter a number (1-5): ");
+        ch = getc(stdin);
+        getc(stdin);
+        printf("\n--------------------------------------------------------------------------------");
+        switch (ch) {
+            case '1':
+                searchf();
+                break;
+            case '2':
+                searchl();
+                break;
+            case '3':
+                searchp();
+                break;
+            case '4':
+                searchc();
+                break;
+            case '5':
+            default:
+                return;
+        }
     }
 }
 
@@ -309,7 +312,6 @@ void searchf(void)
 
 	printf("\nPress a key to search another contact.");
 	getc(stdin);
-	search();
 }
 
 void searchl(void)
@@ -338,7 +340,6 @@ void searchl(void)
 
 	printf("\nPress a key to search another contact.");
 	getc(stdin);
-	search();
 }
 
 void searchp(void)
@@ -370,7 +371,6 @@ void searchp(void)
 
 	printf("\nPress a key to search another contact.");
 	getc(stdin);
-	search();
 }
 
 void searchc(void)
@@ -402,40 +402,43 @@ void searchc(void)
 
 	printf("\nPress a key to search another contact.");
 	getc(stdin);
-	search();
 }
 
 void sort(void)
 {
 	char ch;
 	clrscr();
-    printf("\nPhone Book12<::>$earch Contacts");
-    printf("\n--------------------------------------------------------------------------------");
-	printf("\nChoose sort type,please:\n\n");
-	printf("\t[1] |--> Sort by first name\n");
-	printf("\t[2] |--> Sort by last name\n");
-	printf("\t[3] |--> Sort by phone number\n");
-	printf("\t[4] |--> Sort by cellphone number\n");
-	printf("\t[5] |--> Main Menu\n");
-	printf("\n\t::Enter a number (1-5): ");
-	ch = getc(stdin);
-	getc(stdin);
-	printf("\n--------------------------------------------------------------------------------");
-    switch(ch){
-		case '1':
-		sortf();
-	    break;
-		case '2':
-		sortl();
-		break;
-		case '3':
-		sortp();
-		break;
-		case '4':
-		sortc();
-		case '5':
-		default:
-			return ;
+
+    while(true) {
+
+        printf("\nPhone Book12<::>$earch Contacts");
+        printf("\n--------------------------------------------------------------------------------");
+        printf("\nChoose sort type,please:\n\n");
+        printf("\t[1] |--> Sort by first name\n");
+        printf("\t[2] |--> Sort by last name\n");
+        printf("\t[3] |--> Sort by phone number\n");
+        printf("\t[4] |--> Sort by cellphone number\n");
+        printf("\t[5] |--> Main Menu\n");
+        printf("\n\t::Enter a number (1-5): ");
+        ch = getc(stdin);
+        getc(stdin);
+        printf("\n--------------------------------------------------------------------------------");
+        switch (ch) {
+            case '1':
+                sortf();
+                break;
+            case '2':
+                sortl();
+                break;
+            case '3':
+                sortp();
+                break;
+            case '4':
+                sortc();
+            case '5':
+            default:
+                return;
+        }
     }
 }
 
@@ -454,7 +457,6 @@ void sortf(void)
 	list2();
 	printf("\n   ::Press any key to sort contact by another form... ");
 	getc(stdin);
-	sort();
 }
 
 void sortl(void)
@@ -472,7 +474,6 @@ void sortl(void)
 	list2();
 	printf("\n   ::Press any key to sort contact by another form... ");
 	getc(stdin);
-	sort();
 }
 void sortp(void)
 {
@@ -489,7 +490,6 @@ void sortp(void)
 	list2();
 	printf("\n   ::Press any key to sort contact by another form... ");
 	getc(stdin);
-	sort();
 }
 void sortc(void)
 {
@@ -506,7 +506,6 @@ void sortc(void)
 	list2();
 	printf("\n   ::Press any key to sort contact by another form... ");
 	getc(stdin);
-	sort();
 }
 
 void list()
