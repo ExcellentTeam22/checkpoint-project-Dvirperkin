@@ -1,0 +1,3 @@
+/home/dvir/Desktop/Checkpoint/Solution/cmake-build-debug/CMakeFiles/Solution.dir
+/home/dvir/Desktop/Checkpoint/Solution/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dvir/Desktop/Checkpoint/Solution/cmake-build-debug/CMakeFiles/rebuild_cache.dir
