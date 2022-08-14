@@ -253,8 +253,8 @@ void edit()
 void search(void)
 {
 	char ch;
-	clrscr();
     while(true) {
+        clrscr();
         printf("\nPhone Book12<::>$earch Contacts");
         printf("\n--------------------------------------------------------------------------------");
         printf("\nChoose search type,please:\n\n");
@@ -407,10 +407,9 @@ void searchc(void)
 void sort(void)
 {
 	char ch;
-	clrscr();
 
     while(true) {
-
+        clrscr();
         printf("\nPhone Book12<::>$earch Contacts");
         printf("\n--------------------------------------------------------------------------------");
         printf("\nChoose sort type,please:\n\n");
@@ -458,7 +457,6 @@ void sortf(void)
 	printf("\n   ::Press any key to sort contact by another form... ");
 	getc(stdin);
 }
-
 void sortl(void)
 {
 	struct contact B;
